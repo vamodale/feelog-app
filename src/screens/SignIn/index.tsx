@@ -13,7 +13,6 @@ import { styles } from './styles';
 
 export function SignIn() {
     return (
-
         <View style={styles.container}>
             <Image source={feelog} style={styles.feelog} />
             <ButtonRegister />
