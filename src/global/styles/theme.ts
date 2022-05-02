@@ -4,8 +4,8 @@ export const theme = {
         white: '#fff'
     },
     fonts: {
-        title500: 'Poppins_500Medium',
         title400: 'Poppins_400Regular',
+        title500: 'Poppins_500Medium',
         title600: 'Poppins_600SemiBold'
     }
 }
