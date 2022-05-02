@@ -5,6 +5,8 @@ import { SignIn } from '../screens/SignIn';
 
 import { theme } from '../global/styles/theme';
 
+import { Home } from '../screens/Home';
+
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -18,8 +20,8 @@ export function AuthRoutes() {
             }}
         >
             <Screen
-                name="SignIn"
-                component={SignIn}
+                name="Home"
+                component={Home}
             />
         </Navigator>
 
