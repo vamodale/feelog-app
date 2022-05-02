@@ -3,6 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import { theme } from '../global/styles/theme';
 
+import { Home } from '../screens/Home';
+
 const { Navigator, Screen } = createStackNavigator();
 
 export function AuthRoutes() {
@@ -15,6 +17,11 @@ export function AuthRoutes() {
                 }
             }}
         >
+
+            <Screen
+                name="Home"
+                component={Home}
+            />
         </Navigator>
 
     )
