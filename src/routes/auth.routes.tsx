@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator } from '@react-navigation/stack'
 import { theme } from '../global/styles/theme';
+import { Loading } from '../screens/Loading';
 
 import { SignIn } from '../screens/SignIn';
 import { Home } from '../screens/Home';
@@ -18,11 +19,11 @@ export function AuthRoutes() {
                 }
             }}
         >
+
             <Screen
                 name="FeelingRecord"
                 component={FeelingRecord}
             />
         </Navigator>
-
     )
 }
