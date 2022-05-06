@@ -8,9 +8,10 @@ import FeelogLogoSmall from '../../images/feelogLogoSmall';
 import { FooterMenu } from '../../components/FooterMenu';
 
 export function Home() {
+
     return (
         <View style={styles.container}>
-            <FeelogLogoSmall style={styles.image}/>
+            <FeelogLogoSmall style={styles.image} />
 
             <Text style={styles.positionText}>
                 <Text style={styles.title}>
@@ -24,10 +25,10 @@ export function Home() {
                 </Text>
             </Text>
 
-            <SafeAreaView style={{justifyContent: 'center', alignItems: 'center' }}>
+            <SafeAreaView style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <LottieView style={styles.animation} resizeMode='contain' source={dog} autoPlay loop />
             </SafeAreaView>
-            <FooterMenu/>
+            <FooterMenu />
         </View>
     );
 }

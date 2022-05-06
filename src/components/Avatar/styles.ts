@@ -2,18 +2,17 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        width: 49,
-        height: 49,
-        borderRadius: 8,
+        width: 48,
+        height: 48,
+        borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
         marginRight: 22,
         marginTop: 48,
-        marginLeft: 300,
     },
     avatar: {
         width: 46,
         height: 46,
-        borderRadius: 8,
+        borderRadius: 50,
     }
 });
