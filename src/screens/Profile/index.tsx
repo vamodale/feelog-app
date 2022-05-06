@@ -13,7 +13,7 @@ import profile from '../../assets/profile.png'
 
 import { styles } from './styles';
 import { FooterMenu } from '../../components/FooterMenu';
-import { ButtonBack } from '../../compontents/ButtonBack';
+import { ButtonBack } from '../../components/ButtonBack';
 
 export function Profile() {
 	var userName = 'Gustavo\nReolon'
@@ -54,7 +54,7 @@ export function Profile() {
 					<Text style={styles.userInfo}>
 						{userOld}
 					</Text>
-						<MaterialIcons name="cake" size={24} color="white" />
+					<MaterialIcons name="cake" size={24} color="white" />
 				</Pressable>
 			</View>
 
@@ -66,7 +66,7 @@ export function Profile() {
 					<Text style={styles.userInfo}>
 						{userGender}
 					</Text>
-						<MaterialIcons name="keyboard-arrow-down" size={24} color="white" />
+					<MaterialIcons name="keyboard-arrow-down" size={24} color="white" />
 				</Pressable>
 			</View>
 
@@ -78,7 +78,7 @@ export function Profile() {
 					<Text style={styles.userInfo}>
 						{userNotification}
 					</Text>
-						<MaterialIcons name="access-time" size={24} color="white" />
+					<MaterialIcons name="access-time" size={24} color="white" />
 				</Pressable>
 			</View>
 
