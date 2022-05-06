@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Image, Text, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 import { styles } from './styles';
-import Feelog from '../../assets/feelog-logo2.svg';
 import LottieView from 'lottie-react-native';
 import dog from '../../assets/dog.json'
 import FeelogLogoSmall from '../../images/feelogLogoSmall';

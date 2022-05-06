@@ -6,6 +6,7 @@ import { Loading } from '../screens/Loading';
 import { SignIn } from '../screens/SignIn';
 import { Home } from '../screens/Home';
 import { FeelingRecord } from '../screens/FeelingRecord';
+import { Profile } from "../screens/Profile";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -36,6 +37,11 @@ export function AuthRoutes() {
             <Screen
                 name="FeelingRecord"
                 component={FeelingRecord}
+            />
+
+            <Screen
+                name="Profile"
+                component={Profile}
             />
         </Navigator>
     )
