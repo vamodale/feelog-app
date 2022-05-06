@@ -7,24 +7,28 @@ import {
 } from 'react-native';
 
 import { LinearGradient } from 'expo-linear-gradient';
+import { MaterialIcons } from '@expo/vector-icons';
 
-import clock from '../../assets/clock.svg'
-import arrow from '../../assets/arrow-down.svg'
-import cake from '../../assets/cake.svg'
 import profile from '../../assets/profile.png'
+
 import { styles } from './styles';
 import { FooterMenu } from '../../components/FooterMenu';
+import { ButtonBack } from '../../compontents/ButtonBack';
 
 export function Profile() {
-	var userName = 'Gustavo Reolon'
+	var userName = 'Gustavo\nReolon'
 	var userOld = 20
-	var userGender = 'Masc'
+	var userGender = 'Masculino'
 	var userNotification = '22:30'
+	var userProfilePicture = profile
 
 	return (
 		<View style={styles.container}>
-			{/* TODO alinhar corretamente esses componentes todos */}
 			{/* TODO deixar as variáveis e a foto do perfil dinâmicas */}
+
+			<View style={styles.back}>
+				<ButtonBack />
+			</ View>
 
 			<View style={styles.profile}>
 				<View style={styles.persona}>
@@ -32,9 +36,9 @@ export function Profile() {
 						start={[0.2, 0.2]}
 						end={[0.8, 0.8]}
 						colors={['#00888D', '#8F009A', '#00C463', '#4DA6FF', '#FFFFEB', '#FFE478', '#FFA34C', '#FF4E41', '#FF4E41',]}
-						style={{ width: '100%', height: '100%', borderRadius: 64 }}
+						style={{ width: '100%', height: '100%', borderRadius: 84 }}
 					>
-						<Image source={profile} style={styles.picture} />
+						<Image source={userProfilePicture} style={styles.picture} />
 					</LinearGradient>
 				</View>
 				<Text style={styles.userName}>
@@ -46,11 +50,12 @@ export function Profile() {
 				<Text style={styles.info}>
 					Idade
 				</Text>
+				<View style={styles.space} />
 				<Pressable style={styles.pressable}>
 					<Text style={styles.userInfo}>
 						{userOld}
-						<Image source={cake} style={styles.icon} />
 					</Text>
+						<MaterialIcons name="cake" size={24} color="white" />
 				</Pressable>
 			</View>
 
@@ -61,8 +66,8 @@ export function Profile() {
 				<Pressable style={styles.pressable}>
 					<Text style={styles.userInfo}>
 						{userGender}
-						<Image source={arrow} style={styles.icon} />
 					</Text>
+						<MaterialIcons name="keyboard-arrow-down" size={24} color="white" />
 				</Pressable>
 			</View>
 
@@ -73,8 +78,8 @@ export function Profile() {
 				<Pressable style={styles.pressable}>
 					<Text style={styles.userInfo}>
 						{userNotification}
-						<Image source={clock} style={styles.icon} />
 					</Text>
+						<MaterialIcons name="access-time" size={24} color="white" />
 				</Pressable>
 			</View>
 
