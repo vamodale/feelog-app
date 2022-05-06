@@ -9,7 +9,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
 
-import profile from '../../assets/profile.jpg'
+import profile from '../../assets/profile.png';
 
 import { styles } from './styles';
 import { FooterMenu } from '../../components/FooterMenu';
