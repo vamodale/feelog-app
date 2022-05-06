@@ -6,7 +6,8 @@ import {
     Pressable,
 } from 'react-native';
 
-import feelog from '../../assets/feelog.png'
+import FeelogLogoSmall from '../../images/feelogLogoSmall';
+
 import { ButtonRegister } from "../../components/ButtonRegister";
 import { styles } from './styles';
 
@@ -14,7 +15,7 @@ import { styles } from './styles';
 export function SignIn() {
     return (
         <View style={styles.container}>
-            <Image source={feelog} style={styles.feelog} />
+            <FeelogLogoSmall style={styles.feelog} />
             <ButtonRegister />
             <View style={styles.teste}>
                 <Text style={styles.account}>

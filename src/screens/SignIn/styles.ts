@@ -10,9 +10,10 @@ export const styles = StyleSheet.create({
     },
 
     feelog: {
-        width: 232,
-        height: 93,
-        resizeMode: 'stretch',
+        width: 212,
+        height: 32,
+        marginTop: 64,
+        marginHorizontal: 74,
     },
 
     account: {
