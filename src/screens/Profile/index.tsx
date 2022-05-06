@@ -50,7 +50,6 @@ export function Profile() {
 				<Text style={styles.info}>
 					Idade
 				</Text>
-				<View style={styles.space} />
 				<Pressable style={styles.pressable}>
 					<Text style={styles.userInfo}>
 						{userOld}
