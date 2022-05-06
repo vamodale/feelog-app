@@ -8,12 +8,12 @@ export const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: "center"
 	},
-	
-	back:{
-		bottom: 160,
+
+	back: {
+		bottom: 140,
 		left: -160,
 	},
-	
+
 	profile: {
 		marginStart: -40,
 		bottom: 56,
@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
 		zIndex: 1, // works on ios
 		elevation: 1, // works on android
 	},
-	
+
 	picture: {
 		marginVertical: 2,
 		marginHorizontal: 2,
@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
 		borderRadius: 82,
 		backgroundColor: theme.colors.primary,
 	},
-	
+
 	userName: {
 		fontSize: RFValue(24, 600), // FontSize Responsive
 		fontFamily: theme.fonts.title600,
@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
 		marginLeft: 32,
 		marginTop: -55,
 	},
-	
+
 	info: {
 		fontSize: RFValue(14, 600), // FontSize Responsive
 		fontFamily: theme.fonts.title600,
@@ -56,20 +56,20 @@ export const styles = StyleSheet.create({
 		marginRight: 16,
 		marginLeft: 2
 	},
-	
+
 	infoContainer: {
 		bottom: 80,
 		flexDirection: "row",
 		paddingHorizontal: 56,
 	},
-	
+
 	userInfo: {
 		fontSize: RFValue(14, 600), // FontSize Responsive
 		fontFamily: theme.fonts.title400,
 		color: theme.colors.white,
 		marginRight: 20,
 	},
-	
+
 	pressable: {
 		flex: 1,
 		justifyContent: "space-between",
