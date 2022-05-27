@@ -27,7 +27,6 @@ export function Home() {
             <SafeAreaView style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <LottieView style={styles.animation} resizeMode='contain' source={dog} autoPlay loop />
             </SafeAreaView>
-            <FooterMenu />
         </View>
     );
 }
