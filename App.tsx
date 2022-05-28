@@ -24,7 +24,7 @@ export default function App() {
         translucent
       />
 
-      <Routes/>
+      <Routes />
     </>
   );
 }

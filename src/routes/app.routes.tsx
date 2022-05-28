@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { theme } from '../global/styles/theme';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
-import { RectButton, TouchableOpacity } from "react-native-gesture-handler";
+import { RectButton } from "react-native-gesture-handler";
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from '../components/FooterMenu/styles';
 
@@ -11,29 +11,25 @@ import { SignIn } from '../screens/SignIn';
 import { Home } from '../screens/Home';
 import { FeelingRecord } from '../screens/FeelingRecord';
 import { Profile } from "../screens/Profile";
-import { Loading } from '../screens/Loading';
 import { View } from "react-native";
+import { CameraScreen } from "../screens/CameraScreen";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const CustomTabBarButtom =({children, onPress}) => (
-	<TouchableOpacity
-		onPress={onPress}
-	>
-            <View style={styles.addWrapper}>
-                <LinearGradient
-                    start={[0.2, 0.2]}
-                    end={[0.8, 0.8]}
-                    colors={['#00888D', '#8F009A', '#00C463', '#4DA6FF', '#FFFFEB', '#FFE478', '#FFA34C', '#FF4E41', '#FF4E41',]}
-                    style={{ width: '100%', height: '100%', borderRadius: 34 }}
+	<View style={styles.addWrapper}>
+		<LinearGradient
+			start={[0.2, 0.2]}
+			end={[0.8, 0.8]}
+			colors={['#00888D', '#8F009A', '#00C463', '#4DA6FF', '#FFFFEB', '#FFE478', '#FFA34C', '#FF4E41', '#FF4E41',]}
+			style={{ width: '100%', height: '100%', borderRadius: 34 }}
 
-                >
-                    <RectButton style={styles.addButton}>
-                        <MaterialIcons name="add" size={24} color="white" />
-                    </RectButton>
-                </LinearGradient>
-            </View>
-	</TouchableOpacity>
+		>
+			<RectButton style={styles.addButton} onPress={onPress}>
+				<MaterialIcons name="add" size={24} color="white" />
+			</RectButton>
+		</LinearGradient>
+	</View>
 )
 
 export function AppRoutes() {
@@ -41,6 +37,7 @@ export function AppRoutes() {
 		<Navigator
 			initialRouteName='Home'
 			screenOptions={{ 
+				unmountOnBlur: true,
 				headerShown: false,
 				tabBarShowLabel: false,
 				tabBarStyle: {
@@ -82,9 +79,10 @@ export function AppRoutes() {
 				}}
 			/>
 			<Screen 
-				name="Loading" 
-				component={Loading} 
+				name="Camera" 
+				component={CameraScreen} 
 				options={{
+					tabBarStyle: { display: 'none'},
 					tabBarButton: (props) => (
 						//@ts-ignore
 						<CustomTabBarButtom {...props} />

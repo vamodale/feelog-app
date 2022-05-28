@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView, Animated } from 'react-native';
 import { styles } from './styles';
 import LottieView from 'lottie-react-native';
 import dog from '../../assets/dog.json'
@@ -9,7 +9,7 @@ import { FooterMenu } from '../../components/FooterMenu';
 export function Home() {
 
     return (
-        <View style={styles.container}>
+        <Animated.View style={styles.container}>
             <FeelogLogoSmall style={styles.image} />
 
             <Text style={styles.positionText}>
@@ -27,6 +27,6 @@ export function Home() {
             <SafeAreaView style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <LottieView style={styles.animation} resizeMode='contain' source={dog} autoPlay loop />
             </SafeAreaView>
-        </View>
+        </Animated.View>
     );
 }
