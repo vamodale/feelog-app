@@ -9,8 +9,8 @@ export function ButtonBack() {
     const Navigation = useNavigation();
 
     return (
-        <RectButton onPress={Navigation.goBack}>
-            <View style={styles.ButtonBack}>
+        <RectButton style={styles.ButtonBack} onPress={Navigation.goBack}>
+            <View >
                 <MaterialIcons name="keyboard-arrow-left" size={24} color="#FFFFFF" style={styles.Icon} />
             </View>
         </RectButton>

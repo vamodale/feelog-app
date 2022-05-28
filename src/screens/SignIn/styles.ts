@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: theme.colors.primary,
     },
 
     feelog: {
@@ -17,13 +18,13 @@ export const styles = StyleSheet.create({
     },
 
     account: {
-        fontSize: RFValue(12, 580), // FontSize Responsive
+        fontSize: 12, // FontSize Responsive
         fontFamily: theme.fonts.title400,
         color: theme.colors.white
     },
 
     login: {
-        fontSize: RFValue(12, 580), // FontSize Responsive
+        fontSize: 12, // FontSize Responsive
         fontFamily: theme.fonts.title600,
         color: theme.colors.white
     },

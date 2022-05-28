@@ -1,3 +1,4 @@
+
 import React from "react";
 import { createStackNavigator } from '@react-navigation/stack'
 import { theme } from '../global/styles/theme';
@@ -25,24 +26,6 @@ export function AuthRoutes() {
                 component={SignIn}
             />
 
-            <Screen
-                name="Home"
-                component={Home}
-            />
-            <Screen
-                name="Loading"
-                component={Loading}
-            />
-
-            <Screen
-                name="FeelingRecord"
-                component={FeelingRecord}
-            />
-
-            <Screen
-                name="Profile"
-                component={Profile}
-            />
         </Navigator>
     )
 }

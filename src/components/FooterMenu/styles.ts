@@ -14,23 +14,20 @@ export const styles = StyleSheet.create({
         overflow: 'hidden',
         flexDirection: 'row',
         alignItems: 'center',
-        bottom: 48,
+        bottom: 200,
         zIndex: 0, // works on ios
         elevation: 0, // works on android
         paddingHorizontal: 52,
         justifyContent: "space-between"
     },
     addWrapper: {
-        position: "absolute",
         alignItems: 'center',
         justifyContent: "center",
-        bottom: 76,
+        bottom: 33,
         backgroundColor: theme.colors.primary,
         height: 68,
         width: 68,
         borderRadius: 34,
-        zIndex: 1, // works on ios
-        elevation: 1, // works on android
     },
     addButton: {
         marginVertical: 2,
