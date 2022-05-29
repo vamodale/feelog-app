@@ -32,5 +32,24 @@ export const styles = StyleSheet.create({
         justifyContent: 'center', 
         alignItems: 'center', 
         backgroundColor: theme.colors.primary
+    },
+
+    NextButton: {
+        backgroundColor: theme.colors.white,
+        borderRadius: 24,
+        zIndex: 5,
+        elevation: 5,
+        position: 'absolute',
+        bottom: 72,
+        paddingHorizontal:48,
+        paddingVertical: 12
+    },
+
+    NextButtonText: {
+            flex: 1,
+            color: theme.colors.primary,
+            fontSize: 16,
+            fontFamily: theme.fonts.title500,
+            textAlign: 'center',
     }
 })

@@ -13,6 +13,7 @@ import { FeelingRecord } from '../screens/FeelingRecord';
 import { Profile } from "../screens/Profile";
 import { View, Platform, TouchableOpacity } from "react-native";
 import { CameraScreen } from "../screens/CameraScreen";
+import { Loading } from "../screens/Loading";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -68,6 +69,14 @@ export function AppRoutes() {
 					tabBarItemStyle: {
 						display: "none",
 					}
+				}}
+			/>
+			<Screen 
+				name="Loading" 
+				component={Loading} 
+				options={{
+					tabBarStyle: { display: 'none'},
+					tabBarItemStyle: { display: 'none'}
 				}}
 			/>
 			<Screen 
