@@ -1,6 +1,5 @@
 import React from "react";
-import { RectButton } from "react-native-gesture-handler";
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
 import { IconGoogle } from "../IconGoogle";
@@ -8,7 +7,7 @@ import { IconGoogle } from "../IconGoogle";
 export function ButtonRegister() {
 
     return (
-        <RectButton
+        <TouchableOpacity
             style={styles.container}
         >
             <View style={styles.icongoogle}>
@@ -18,6 +17,6 @@ export function ButtonRegister() {
             <Text style={styles.title}>
                 Registrar
             </Text>
-        </RectButton>
+        </TouchableOpacity>
     )
 }

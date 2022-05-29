@@ -1,7 +1,5 @@
 import React from "react";
-import { Text } from 'react-native';
-
-import { RectButton } from "react-native-gesture-handler";
+import { Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles';
@@ -19,7 +17,7 @@ export function ButtonGeneric({ description }: Props) {
     }
 
     return (
-        <RectButton
+        <TouchableOpacity
             style={styles.container}
             onPress={HandleProfile}
         >
@@ -27,6 +25,6 @@ export function ButtonGeneric({ description }: Props) {
             <Text style={styles.title}>
                 {description}
             </Text>
-        </RectButton>
+        </TouchableOpacity>
     )
 }

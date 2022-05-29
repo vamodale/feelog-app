@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView, Pressable } from 'react-native';
+import { View, SafeAreaView, Pressable } from 'react-native';
 import Lottie from 'lottie-react-native';
 import loading from '../../assets/loading.json'
 import { ButtonBack } from '../../components/ButtonBack';

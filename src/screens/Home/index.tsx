@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Text, SafeAreaView, Animated } from 'react-native';
+import { Text, SafeAreaView, Animated } from 'react-native';
 import { styles } from './styles';
 import LottieView from 'lottie-react-native';
 import dog from '../../assets/dog.json'
 import FeelogLogoSmall from '../../images/feelogLogoSmall';
-import { FooterMenu } from '../../components/FooterMenu';
 
 export function Home() {
 

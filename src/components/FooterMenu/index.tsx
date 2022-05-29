@@ -1,6 +1,5 @@
 import React from "react";
-import { RectButton } from "react-native-gesture-handler";
-import { Text, View } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -24,15 +23,15 @@ export function FooterMenu() {
         <>
 
             <View style={styles.container}>
-                <RectButton onPress={HandleProfile}>
-                    { Navigation.getId() == "Profile" ?
-                    <MaterialIcons name="person" size={24} color="white" /> :
-                    <MaterialIcons name="person-outline" size={24} color="white" />
+                <TouchableOpacity onPress={HandleProfile}>
+                    {Navigation.getId() == "Profile" ?
+                        <MaterialIcons name="person" size={24} color="white" /> :
+                        <MaterialIcons name="person-outline" size={24} color="white" />
                     }
-                </RectButton>
-                <RectButton>
+                </TouchableOpacity>
+                <TouchableOpacity>
                     <MaterialCommunityIcons name="calendar-blank-outline" size={24} color="white" />
-                </RectButton>
+                </TouchableOpacity>
             </View>
             <View style={styles.addWrapper}>
                 <LinearGradient
@@ -42,9 +41,9 @@ export function FooterMenu() {
                     style={{ width: '100%', height: '100%', borderRadius: 34 }}
 
                 >
-                    <RectButton style={styles.addButton} onPress={HandleLoading}>
+                    <TouchableOpacity style={styles.addButton} onPress={HandleLoading}>
                         <MaterialIcons name="add" size={24} color="white" />
-                    </RectButton>
+                    </TouchableOpacity>
                 </LinearGradient>
             </View>
         </>
