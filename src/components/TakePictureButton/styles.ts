@@ -1,5 +1,9 @@
-import { StyleSheet } from "react-native";
+import { AutoFocus } from "expo-camera/build/Camera.types";
+import { Dimensions, StyleSheet } from "react-native";
 import { theme } from '../../global/styles/theme';
+
+
+const windowWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
     buttonWrapper: {
@@ -7,11 +11,11 @@ export const styles = StyleSheet.create({
         height: 68,
         width: 68,
         borderRadius: 34,
-        zIndex: 2,
-        elevation: 2,
+        zIndex: 6,
+        elevation: 6,
         position: 'absolute',
-        bottom: 75,
-        left: '41-50%',
+        bottom: 64,
+        left: windowWidth/2-34,
     },
     pictureButton: {
         marginVertical: 2,
@@ -20,7 +24,7 @@ export const styles = StyleSheet.create({
         height: 64,
         borderRadius: 32,
         alignItems: 'center',
-        justifyContent: "center",
+        justifyContent: 'center',
         backgroundColor: theme.colors.primary,
     }
 });
