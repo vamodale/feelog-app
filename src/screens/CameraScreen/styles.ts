@@ -17,8 +17,8 @@ export const styles = StyleSheet.create({
         borderColor: '#FFFFFF',
         borderWidth: 1,
         backgroundColor: theme.colors.primary,
-        zIndex: 3,
-        elevation: 3,
+        zIndex: 2,
+        elevation: 2,
         position: 'absolute'
     },
 

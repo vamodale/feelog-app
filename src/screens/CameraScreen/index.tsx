@@ -7,7 +7,7 @@ import { Camera } from 'expo-camera';
 import { TakePictureButton } from '../../components/TakePictureButton';
 import Mask from '../../assets/Mask.png'
 import Exclude from '../../assets/exclude.png'
-import { TouchableOpacity } from 'react-native';
+import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export function CameraScreen() {
@@ -18,20 +18,7 @@ export function CameraScreen() {
 
     const options = { 
       quality: 0.5, 
-      base64: true
    };
-
-   function ratioCalc(n1, n2) {
-    var resto, x, y;
-    x = n1;
-    y = n2;
-    while(resto!=0){
-      resto = x % y;
-      x = y;
-      y = resto;
-    }
-    return (n1*n2)/x;
-  };
 
     
     useEffect(() => {
@@ -60,7 +47,7 @@ export function CameraScreen() {
     return (
       <>
       <ButtonBack/>
-      <Camera ratio='16:9' autoFocus="auto"  style={styles.camera} type={Camera.Constants.Type.front} ref={camRef}/>
+      <Camera autoFocus="auto"  style={styles.camera} type={Camera.Constants.Type.front} ref={camRef}/>
       <TakePictureButton onPress={takePicture}/>
       <Image source={Mask} style={{ width: '100%', height: '100%', position: 'absolute' }} />
 
@@ -76,11 +63,11 @@ export function CameraScreen() {
             source={{uri: capturedPhoto}}
           />
 
-          <TouchableOpacity style={styles.ButtonBack} onPress={() =>setOpen(false)}>
+          <RectButton style={styles.ButtonBack} onPress={() =>setOpen(false)}>
             <View >
                 <MaterialIcons name="keyboard-arrow-left" size={24} color="#FFFFFF" style={styles.Icon} />
             </View>
-          </TouchableOpacity>
+          </RectButton>
 
           </View>
         </Modal>

@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
+        backgroundColor: theme.colors.primary,
     },
 
     image: {

@@ -1,14 +1,19 @@
 import { StyleSheet } from 'react-native';
+import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
     ButtonBack: {
-        marginTop: 48,
-        marginLeft: 32,
         borderRadius: 24,
         width: 48,
         height: 48,
+        top: 64,
+        left: 32,
         borderColor: '#FFFFFF',
-        borderWidth: 1
+        borderWidth: 1,
+        backgroundColor: theme.colors.primary,
+        zIndex: 2,
+        elevation: 2,
+        position: 'absolute'
     },
 
     Icon: {
