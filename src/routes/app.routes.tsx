@@ -16,15 +16,15 @@ import { CameraScreen } from "../screens/CameraScreen";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
-const CustomTabBarButtom =({children, onPress}) => (
+const CustomTabBarButtom = ({ children, onPress }) => (
 	<TouchableOpacity style={styles.addWrapper} onPress={onPress}>
 		<LinearGradient
 			start={[0.2, 0.2]}
 			end={[0.8, 0.8]}
 			colors={
 				Platform.OS === 'ios' ?
-				['#00888D', '#8F009A', '#00C463', '#4DA6FF', '#FFFFEB', '#FFE478', '#FFA34C', '#FF4E41', '#FF4E41',] :
-				['#00888D', '#00C463', '#4DA6FF', '#FFFFEB', '#FFE478', '#FFA34C', '#FF4E41', '#FF4E41', '#8F009A',]}
+					['#00888D', '#8F009A', '#00C463', '#4DA6FF', '#FFFFEB', '#FFE478', '#FFA34C', '#FF4E41', '#FF4E41',] :
+					['#00888D', '#00C463', '#4DA6FF', '#FFFFEB', '#FFE478', '#FFA34C', '#FF4E41', '#FF4E41', '#8F009A',]}
 			style={{ width: '100%', height: '100%', borderRadius: 34 }}
 
 		>
@@ -36,10 +36,10 @@ const CustomTabBarButtom =({children, onPress}) => (
 )
 
 export function AppRoutes() {
-    return (
+	return (
 		<Navigator
 			initialRouteName='Home'
-			screenOptions={{ 
+			screenOptions={{
 				unmountOnBlur: true,
 				headerShown: false,
 				tabBarShowLabel: false,
@@ -60,49 +60,50 @@ export function AppRoutes() {
 					paddingBottom: 0,
 				}
 			}}
-        >
-			<Screen 
-				name="Home" 
-				component={Home} 
+		>
+			<Screen
+				name="Home"
+				component={Home}
 				options={{
 					tabBarItemStyle: {
 						display: "none",
 					}
 				}}
 			/>
-			<Screen 
-				name="Profile" 
-				component={Profile} 
+			<Screen
+				name="Profile"
+				component={Profile}
 				options={{
-					tabBarIcon: (({ focused }) => 
-						focused 
-						? <MaterialIcons name="person" size={24} color="white"/> 
-						: <MaterialIcons name="person-outline" size={24} color="white" />
+					tabBarIcon: (({ focused }) =>
+						focused
+							? <MaterialIcons name="person" size={24} color="white" />
+							: <MaterialIcons name="person-outline" size={24} color="white" />
 					)
 				}}
 			/>
-			<Screen 
-				name="Camera" 
-				component={CameraScreen} 
+			<Screen
+				name="Camera"
+				component={CameraScreen}
 				options={{
-					tabBarStyle: { display: 'none'},
+					tabBarStyle: { display: 'none' },
 					tabBarButton: (props) => (
 						//@ts-ignore
 						<CustomTabBarButtom {...props} />
 					)
 				}}
 			/>
-			<Screen 
-				name="FeelingRecord" 
-				component={FeelingRecord} 
+			<Screen
+				name="FeelingRecord"
+				component={FeelingRecord}
 				options={{
-					tabBarIcon: (({ focused }) => 
-						focused 
-						? <MaterialCommunityIcons name="calendar-blank" size={24} color="white"/> 
-						: <MaterialCommunityIcons name="calendar-blank-outline" size={24} color="white" />
+					tabBarStyle: { display: 'none' },
+					tabBarIcon: (({ focused }) =>
+						focused
+							? <MaterialCommunityIcons name="calendar-blank" size={24} color="white" />
+							: <MaterialCommunityIcons name="calendar-blank-outline" size={24} color="white" />
 					)
 				}}
 			/>
 		</Navigator>
-    )
+	)
 }
