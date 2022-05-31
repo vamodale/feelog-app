@@ -54,8 +54,9 @@ const CalendarsList = () => {
 			dayTextColor: theme.colors.lightgrey,
 			textDayHeaderFontFamily: theme.fonts.title600,
 			textDayHeaderFontSize: 12,
+			agendaDayTextColor: theme.colors.lightgrey,
 			'stylesheet.calendar.header': {
-				week: {flexDirection: 'row', justifyContent: 'space-around',   width: '100%',}
+				week: {flexDirection: 'row', justifyContent: 'space-around',   width: '100%'}
 			}
 		}}
 		style={{
