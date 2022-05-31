@@ -1,6 +1,8 @@
 export const theme = {
     colors: {
         primary: '#121214',
+        primaryrgba: `&{rgba(18, 18, 20, 1)}`,
+        transparentrgba: `&{rgba(18, 18, 20, 0)}`,
         white: '#fff',
         lightgrey: '#73737C',
         1: '#FFA34C',

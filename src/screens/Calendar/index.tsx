@@ -36,14 +36,14 @@ const CalendarsList = () => {
 			pointerEvents='none'
 			start={[0.5, 0]}
 			end={[0.5, 0.2]}
-			colors={[theme.colors.primary, 'transparent']}
+			colors={[theme.colors.primaryrgba, theme.colors.transparentrgba]}
 			style={{ width: '100%', height: '100%', position: 'absolute', zIndex: 1,}}
 		/>
 		<LinearGradient // Gradient de baixo
 			pointerEvents='none'
 			start={[0.5, 0.8]}
 			end={[0.5, 1]}
-			colors={['transparent', theme.colors.primary]}
+			colors={[theme.colors.transparentrgba, theme.colors.primary]}
 			style={{ width: '100%', height: '100%', position: 'absolute', zIndex: 1,}}
 		/>
 		<CalendarList
