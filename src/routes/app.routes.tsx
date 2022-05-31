@@ -14,6 +14,7 @@ import { Profile } from "../screens/Profile";
 import { View, Platform, TouchableOpacity } from "react-native";
 import { CameraScreen } from "../screens/CameraScreen";
 import { Loading } from "../screens/Loading";
+import Calendar from "../screens/Calendar";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -102,14 +103,22 @@ export function AppRoutes() {
 				}}
 			/>
 			<Screen 
-				name="FeelingRecord" 
-				component={FeelingRecord} 
+				name="Calendar" 
+				component={Calendar} 
 				options={{
 					tabBarIcon: (({ focused }) => 
 						focused 
 						? <MaterialCommunityIcons name="calendar-blank" size={24} color="white"/> 
 						: <MaterialCommunityIcons name="calendar-blank-outline" size={24} color="white" />
 					)
+				}}
+			/>
+			<Screen 
+				name="FeelingRecord" 
+				component={FeelingRecord} 
+				options={{
+					tabBarStyle: { display: 'none'},
+					tabBarItemStyle: { display: 'none'}
 				}}
 			/>
 		</Navigator>
