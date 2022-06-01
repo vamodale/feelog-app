@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Text, Image, View, Modal, TouchableOpacity } from 'react-native';
+import { Text, Image, View, Modal, Dimensions } from 'react-native';
 import { styles } from './styles';
 import { ButtonBack } from '../../components/ButtonBack';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -7,28 +7,22 @@ import { Camera } from 'expo-camera';
 import { TakePictureButton } from '../../components/TakePictureButton';
 import Mask from '../../assets/Mask.png'
 import Exclude from '../../assets/exclude.png'
+import { TouchableOpacity } from 'react-native';
+import getEmotion from '../../connectors/aws/rekognition'
+import { useNavigation } from '@react-navigation/native';
 
 export function CameraScreen() {
   const camRef = useRef(null);
   const [hasPermission, setHasPermission] = useState(null);
   const [capturedPhoto, setCapturedPhoto] = useState(null);
+  const [Emotion, setEmotion] = useState(null);
+
   const [open, setOpen] = useState(null);
+  const Navigation = useNavigation();
 
   const options = {
     quality: 0.5,
     base64: true
-  };
-
-  function ratioCalc(n1, n2) {
-    var resto, x, y;
-    x = n1;
-    y = n2;
-    while (resto != 0) {
-      resto = x % y;
-      x = y;
-      y = resto;
-    }
-    return (n1 * n2) / x;
   };
 
 
@@ -49,10 +43,21 @@ export function CameraScreen() {
   async function takePicture() {
     if (camRef) {
       const data = await camRef.current.takePictureAsync(options);
-      setCapturedPhoto(data.uri);
+      setCapturedPhoto(data);
+      // console.log(data.base64)
       setOpen(true)
-      console.log(data)
+      // console.log(data)
     }
+  }
+
+  async function processImage() {
+    //@ts-ignore
+    await Navigation.navigate('Loading')
+    setEmotion(await getEmotion(capturedPhoto.base64))
+
+    //@ts-ignore
+    await Navigation.navigate('FeelingRecord')
+
   }
 
   return (
@@ -71,8 +76,11 @@ export function CameraScreen() {
             <Image source={Exclude} style={{ width: '100%', height: '100%', position: 'absolute' }} />
             <Image
               style={{ width: '100%', height: '100%', zIndex: -1, transform: [{ rotateY: '180deg' }] }}
-              source={{ uri: capturedPhoto }}
+              source={{ uri: capturedPhoto.uri }}
             />
+            <TouchableOpacity style={styles.NextButton} onPress={processImage}>
+              <Text style={styles.NextButtonText}>Próximo</Text>
+            </TouchableOpacity>
 
             <TouchableOpacity style={styles.ButtonBack} onPress={() => setOpen(false)}>
               <View >
@@ -80,8 +88,8 @@ export function CameraScreen() {
               </View>
             </TouchableOpacity>
 
-          </View>
-        </Modal>
+          </View >
+        </Modal >
 
       }
 

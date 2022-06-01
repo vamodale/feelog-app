@@ -4,6 +4,8 @@ import { Poppins_300Light, Poppins_500Medium, Poppins_400Regular, Poppins_600Sem
 import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'react-native';
 
+// if (process.env.DEBUG) require('dotenv').config();
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_300Light,
