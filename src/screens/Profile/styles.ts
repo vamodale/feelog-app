@@ -5,80 +5,76 @@ import { RFValue } from "react-native-responsive-fontsize";
 export const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		alignItems: 'center',
-		justifyContent: "center"
-	},
-
-	back: {
-		bottom: 140,
-		left: -160,
+		backgroundColor: theme.colors.primary,
 	},
 
 	profile: {
-		marginStart: -40,
-		bottom: 56,
 		flexDirection: "row",
+		alignItems: 'center',
+		marginTop: 128,
+		marginLeft: 32,
 	},
 
 	persona: {
 		flexDirection: "row",
-		bottom: 80,
 		backgroundColor: theme.colors.primary,
-		height: 168,
-		width: 168,
-		borderRadius: 84,
-		zIndex: 1, // works on ios
-		elevation: 1, // works on android
+		height: 128,
+		width: 128,
+		borderRadius: 64,
 	},
 
 	picture: {
 		marginVertical: 2,
 		marginHorizontal: 2,
-		width: 164,
-		height: 164,
-		borderRadius: 82,
+		width: 124,
+		height: 124,
+		borderRadius: 62,
 		backgroundColor: theme.colors.primary,
+
 	},
 
 	userName: {
-		fontSize: RFValue(24, 600), // FontSize Responsive
+		fontSize: 24,
 		fontFamily: theme.fonts.title600,
 		color: theme.colors.white,
 		marginLeft: 32,
-		marginTop: -55,
+		marginRight: 32
 	},
 
 	info: {
-		fontSize: RFValue(14, 600), // FontSize Responsive
+		fontSize: 14,
 		fontFamily: theme.fonts.title600,
 		color: theme.colors.white,
-		marginTop: 40,
-		marginRight: 16,
-		marginLeft: 2
+		marginRight: 24
 	},
 
 	infoContainer: {
-		bottom: 80,
-		flexDirection: "row",
-		paddingHorizontal: 56,
+		flexDirection: 'column',
+		marginHorizontal: 32,
+		marginTop: 24,
+	},
+
+	infoRow: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		marginTop: 24
 	},
 
 	userInfo: {
-		fontSize: RFValue(14, 600), // FontSize Responsive
+		fontSize: 14, // FontSize Responsive
 		fontFamily: theme.fonts.title400,
 		color: theme.colors.white,
 		marginRight: 20,
 	},
 
 	pressable: {
-		flex: 1,
 		justifyContent: "space-between",
 		flexDirection: "row",
 		borderRadius: 62,
 		borderColor: theme.colors.white,
 		borderWidth: 1,
 		padding: 12,
-		paddingHorizontal: 24,
-		marginTop: 24,
+		alignItems: 'center',
+		flex: 1
 	}
 });

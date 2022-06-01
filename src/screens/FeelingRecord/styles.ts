@@ -4,62 +4,53 @@ import { theme } from "../../global/styles/theme";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    Heading: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '99%',
+        backgroundColor: theme.colors.primary,
     },
 
-    box: {
-        display: "flex",
-        justifyContent: "center",
+    selectButton: {
         marginTop: 32,
         marginHorizontal: 32,
-        borderRadius: 25,
+        borderRadius: 24,
         borderWidth: 1,
-        borderColor: '#FFA34C',
-        height: 55,
-        marginBottom: 20,
-        width: '85%',
+        borderColor: theme.colors.white,
+        backgroundColor: theme.colors.primary,
+        color: theme.colors.white,
     },
 
-    pickerbox: {
-        justifyContent: "center",
-        alignItems: "center",
-        marginBottom: 25,
-        color: "white",
+    selectTextButton: {
+        backgroundColor: theme.colors.primary,
+        color: theme.colors.white,
         fontFamily: theme.fonts.title400,
-        borderRadius: 25,
-        marginHorizontal: 15,
+    },
+
+    selectRow: {
+        borderRadius: 24,
+        borderWidth: 1,
+        borderColor: theme.colors.white
+    },
+
+    selectTextRow: {
+        color: theme.colors.white,
+        fontFamily: theme.fonts.title400,
+    },
+
+    selectDropDown: {
+        borderRadius: 24,
+        backgroundColor: theme.colors.primary,
     },
 
     input: {
-        width: '85%',
         backgroundColor: theme.colors.primary,
-        marginTop: 10,
-        marginBottom: 30,
-        color: 'white',
+        marginTop: 32,
+        color: theme.colors.white,
         borderRadius: 15,
-        shadowColor: "#000",
-        shadowOpacity: 0.23,
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowRadius: 2.62,
         elevation: 4,
         borderColor: theme.colors.white,
         borderWidth: 1,
         justifyContent: 'center',
-        marginHorizontal: 35
-    },
-
-    labels: {
-        marginHorizontal: 24,
+        marginHorizontal: 32,
         marginVertical: 24,
-        color: theme.colors.white,
-
-    },
-
+        paddingHorizontal: 24,
+        paddingVertical: 24
+    }
 });
