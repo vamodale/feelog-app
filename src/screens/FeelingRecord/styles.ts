@@ -1,26 +1,34 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import { theme } from "../../global/styles/theme";
+
+const windowWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.primary,
+        alignItems: 'center', 
     },
 
     selectButton: {
-        marginTop: 32,
+        paddingHorizontal: 0,
         marginHorizontal: 32,
+        width: windowWidth-64,
+        marginTop: 32,
         borderRadius: 24,
         borderWidth: 1,
-        borderColor: theme.colors.white,
+        borderColor: theme.colors.primary,
         backgroundColor: theme.colors.primary,
-        color: theme.colors.white,
+        color: theme.colors.white
     },
 
     selectTextButton: {
         backgroundColor: theme.colors.primary,
         color: theme.colors.white,
         fontFamily: theme.fonts.title400,
+        fontSize: 16,
+        textAlign: 'left',
+        marginHorizontal: 24,
     },
 
     selectRow: {
@@ -30,20 +38,29 @@ export const styles = StyleSheet.create({
     },
 
     selectTextRow: {
+        textAlign: 'left',
+        marginHorizontal: 24,
         color: theme.colors.white,
         fontFamily: theme.fonts.title400,
+        fontSize: 16,
     },
 
     selectDropDown: {
+        shadowOpacity: 0,
+        elevation: 0,
+        shadowRadius: 0,
         borderRadius: 24,
+        borderWidth: 1,
         backgroundColor: theme.colors.primary,
+        borderColor: theme.colors.white,
     },
 
     input: {
+        width: windowWidth-64,
         backgroundColor: theme.colors.primary,
         marginTop: 32,
         color: theme.colors.white,
-        borderRadius: 15,
+        borderRadius: 16,
         elevation: 4,
         borderColor: theme.colors.white,
         borderWidth: 1,
@@ -52,5 +69,9 @@ export const styles = StyleSheet.create({
         marginVertical: 24,
         paddingHorizontal: 24,
         paddingVertical: 24
+    },
+
+    icon: {
+        marginRight: 24,
     }
 });

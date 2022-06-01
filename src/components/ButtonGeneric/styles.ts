@@ -3,22 +3,23 @@ import { theme } from '../../global/styles/theme';
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const styles = StyleSheet.create({
+
     container: {
-        width: 147,
-        height: 48,
         backgroundColor: theme.colors.white,
         borderRadius: 24,
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 180,
-        marginHorizontal: 138
+        zIndex: 5,
+        elevation: 5,
+        position: 'absolute',
+        bottom: 72,
+        paddingHorizontal:48,
+        paddingVertical: 12
     },
 
     title: {
-        flex: 1,
-        color: theme.colors.primary,
-        fontSize: RFValue(16, 580), // FontSize Responsive
-        fontFamily: theme.fonts.title500,
-        textAlign: 'center',
-    },
+            flex: 1,
+            color: theme.colors.primary,
+            fontSize: 16,
+            fontFamily: theme.fonts.title500,
+            textAlign: 'center',
+    }
 });

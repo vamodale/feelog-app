@@ -16,11 +16,9 @@ export const styles = StyleSheet.create({
 	},
 
 	persona: {
-		flexDirection: "row",
 		backgroundColor: theme.colors.primary,
 		height: 128,
 		width: 128,
-		borderRadius: 64,
 	},
 
 	picture: {
@@ -28,9 +26,8 @@ export const styles = StyleSheet.create({
 		marginHorizontal: 2,
 		width: 124,
 		height: 124,
-		borderRadius: 62,
 		backgroundColor: theme.colors.primary,
-
+		borderRadius: 62
 	},
 
 	userName: {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Text, Image, View, Modal, Dimensions } from 'react-native';
 import { styles } from './styles';
 import { ButtonBack } from '../../components/ButtonBack';
@@ -52,12 +52,17 @@ export function CameraScreen() {
 
   async function processImage() {
     //@ts-ignore
-    await Navigation.navigate('Loading')
+    Navigation.navigate('Loading')
     setEmotion(await getEmotion(capturedPhoto.base64))
 
     //@ts-ignore
-    await Navigation.navigate('FeelingRecord')
-
+    navigation.navigate('FeelingRecord',
+      {
+        capturedPhoto: capturedPhoto,
+      }
+      
+    )
+    console.log(Emotion)
   }
 
   return (
@@ -78,7 +83,8 @@ export function CameraScreen() {
               style={{ width: '100%', height: '100%', zIndex: -1, transform: [{ rotateY: '180deg' }] }}
               source={{ uri: capturedPhoto.uri }}
             />
-            <TouchableOpacity style={styles.NextButton} onPress={processImage}>
+            {/* @ts-ignore */}
+            <TouchableOpacity style={styles.NextButton} onPress={() => Navigation.navigate('FeelingRecord', { capturedPhoto: capturedPhoto })}>
               <Text style={styles.NextButtonText}>Próximo</Text>
             </TouchableOpacity>
 

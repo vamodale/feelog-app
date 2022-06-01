@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     container: {
         width: 48,
         height: 48,
-        borderRadius: 50,
+        borderRadius: 24,
         alignItems: 'center',
         justifyContent: 'center',
         marginRight: 32,
@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
         marginTop: 64,
     },
     avatar: {
+        transform: [{ rotateY: '180deg' }],
         width: 46,
         height: 46,
         borderRadius: 50,
