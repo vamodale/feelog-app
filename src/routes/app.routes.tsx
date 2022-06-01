@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { theme } from '../global/styles/theme';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
-import { RectButton } from "react-native-gesture-handler";
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from '../components/FooterMenu/styles';
 
@@ -11,6 +10,7 @@ import { SignIn } from '../screens/SignIn';
 import { Home } from '../screens/Home';
 import { FeelingRecord } from '../screens/FeelingRecord';
 import { Profile } from "../screens/Profile";
+import { FeelingHistory } from "../screens/FeelingHistory"
 import { View, Platform, TouchableOpacity } from "react-native";
 import { CameraScreen } from "../screens/CameraScreen";
 
@@ -102,6 +102,15 @@ export function AppRoutes() {
 							? <MaterialCommunityIcons name="calendar-blank" size={24} color="white" />
 							: <MaterialCommunityIcons name="calendar-blank-outline" size={24} color="white" />
 					)
+				}}
+			/>
+			<Screen
+				name="FeelingHistory"
+				component={FeelingHistory}
+				options={{
+					tabBarItemStyle: {
+						display: "none",
+					}
 				}}
 			/>
 		</Navigator>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, ScrollView, SafeAreaView, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
 import { styles } from './styles';
 import { Avatar } from '../../components/Avatar';
 import { ButtonBack } from '../../components/ButtonBack';
@@ -16,6 +16,7 @@ export function FeelingRecord() {
             <Avatar urlImage="https://github.com/ZoTTiz.png" />
 
             <SelectDropdown
+                defaultButtonText='Selecione seu sentimento'
                 data={countries}
                 buttonStyle={styles.selectButton}
                 buttonTextStyle={styles.selectTextButton}
