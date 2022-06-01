@@ -22,6 +22,14 @@ const CalendarsList = () => {
       selectedColor: '#5E60CE',
       selectedTextColor: 'white'
     },
+	'2022-05-16': {selected: true, selectedColor: theme.colors[1]},
+	'2022-05-17': {selected: true, selectedColor: theme.colors[2]},
+	'2022-05-18': {selected: true, selectedColor: theme.colors[3]},
+	'2022-05-19': {selected: true, selectedColor: theme.colors[4]},
+	'2022-05-20': {selected: true, selectedColor: theme.colors[5]},
+	'2022-05-21': {selected: true, selectedColor: theme.colors[6]},
+	'2022-05-22': {selected: true, selectedColor: theme.colors[7]},
+	'2022-05-23': {selected: true, selectedColor: theme.colors[8]},
   };
   
   const onDayPress = day => {
