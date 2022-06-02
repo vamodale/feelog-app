@@ -10,6 +10,8 @@ import { ButtonGeneric } from '../../components/ButtonGeneric';
 import { theme } from '../../global/styles/theme';
 import getEmotion from '../../connectors/aws/rekognition';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import createEmotion from '../../connectors/aws/createEmotion'
 
 const DismissKeyboard = ({ children }) => (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -19,11 +21,14 @@ const DismissKeyboard = ({ children }) => (
 
 export function FeelingRecord({route}) {
     const feelings = ["Feliz", "Surpreso", "Medo", "Triste", "Calmo", "Nojo", "Confuso", "Raiva"]
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
     const [emotion, setEmotion] = useState(null)
     const [icon, setIcon] = useState(false)
-
+    const [message, setMessage] = useState('')
+    const Navigation = useNavigation();
+    
     const { uri, base64 } = route.params.capturedPhoto;
+
 
     useEffect(() => {
         loadData();
@@ -32,11 +37,18 @@ export function FeelingRecord({route}) {
     const loadData = async () => {
         try {
         setEmotion(await getEmotion(base64))
-        setIsLoading(true);
+        setIsLoading(false);
         }
         catch (e) {
             console.log(e);
         }
+    }
+
+    const submitEmotion = async () => {
+        const emotionObject = await createEmotion({ authToken: ''}, 
+        {message, emotion, picture: base64} )
+        //@ts-ignore
+        Navigation.navigate('FeelingHistory', emotionObject)
     }
 
     return (
@@ -44,6 +56,10 @@ export function FeelingRecord({route}) {
         <View style={styles.container}>
             <ButtonBack />
             {isLoading ? 
+            <SafeAreaView style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                <Lottie resizeMode='contain' source={loadinggif} autoPlay loop />
+            </SafeAreaView>
+            :
             <>
             <Avatar urlImage={uri} colorEnum={emotion} />
 
@@ -75,7 +91,7 @@ export function FeelingRecord({route}) {
 
             <View style={styles.input}>
                 <TextInput
-
+                    onChangeText={newText => setMessage(newText)}
                     multiline
                     textAlignVertical="top"
                     numberOfLines={10}
@@ -87,12 +103,9 @@ export function FeelingRecord({route}) {
                 />
             </View>
 
-            <ButtonGeneric description="Salvar" />
+            <ButtonGeneric description="Salvar" onPress={submitEmotion}/>
             </>
-            : 
-            <SafeAreaView style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                <Lottie resizeMode='contain' source={loadinggif} autoPlay loop />
-            </SafeAreaView>
+
             }
         </View>
         </DismissKeyboard>
