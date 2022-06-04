@@ -4,18 +4,19 @@ import { styles } from './styles';
 
 import { IconGoogle } from "../IconGoogle";
 
-export function ButtonRegister() {
+export function ButtonRegister({onPress}) {
 
     return (
         <TouchableOpacity
             style={styles.container}
+            onPress={onPress}
         >
             <View style={styles.icongoogle}>
                 <IconGoogle size={26} />
             </View>
 
             <Text style={styles.title}>
-                Registrar
+                Entrar
             </Text>
         </TouchableOpacity>
     )

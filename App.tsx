@@ -4,6 +4,8 @@ import { Poppins_300Light, Poppins_500Medium, Poppins_400Regular, Poppins_600Sem
 import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'react-native';
 
+import { useAuth, AuthProvider } from './src/hooks/auth2'
+
 // if (process.env.DEBUG) require('dotenv').config();
 
 export default function App() {
@@ -14,7 +16,9 @@ export default function App() {
     Poppins_600SemiBold
   });
 
-  if (!fontsLoaded) {
+  const { userStorageLoading } = useAuth()
+
+  if (!fontsLoaded || userStorageLoading) {
     return <AppLoading />;
   }
 
@@ -26,7 +30,9 @@ export default function App() {
         translucent
       />
 
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </>
   );
 }

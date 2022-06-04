@@ -4,8 +4,10 @@ import { styles } from './styles';
 import LottieView from 'lottie-react-native';
 import dog from '../../assets/dog.json'
 import FeelogLogoSmall from '../../images/feelogLogoSmall';
+import { useAuth } from '../../hooks/auth2';
 
 export function Home() {
+    const { user } = useAuth()
 
     return (
         <Animated.View style={styles.container}>
@@ -15,7 +17,7 @@ export function Home() {
                 <Text style={styles.title}>
                     Olá {' '}
                     <Text style={styles.user}>
-                        {'user'}, {'\n'}
+                        {user.name.split(' ')[0]}, {'\n'}
                     </Text>
 
                     que tal registrar sua  {'\n'}

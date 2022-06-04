@@ -1,23 +1,19 @@
 const axios = require('axios');
-require('dotenv').config()
-
 
 module.exports = async (user, emotion) => {
+        console.log(user, emotion)
     return await axios.post(
         process.env.API_ROUTE + '/emotions', 
-        emotion,
+        JSON.stringify(emotion),
         {
         headers: {
             'Authorization': user.authToken
         }
         })
         .then(res => {
-            console.log(`statusCode: ${res.status}`);
-            console.log(res.data);
             return res.data;
         })
         .catch(error => {
             console.error(error);
-            throw Error(error)
         });
 }

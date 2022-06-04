@@ -45,10 +45,11 @@ export function FeelingRecord({route}) {
     }
 
     const submitEmotion = async () => {
-        const emotionObject = await createEmotion({ authToken: ''}, 
+    const emotionObject = await createEmotion({ authToken: ''/* TOKEN DE AUTORIZACAO */}, 
         {message, emotion, picture: base64} )
+        
         //@ts-ignore
-        Navigation.navigate('FeelingHistory', emotionObject)
+        Navigation.navigate('FeelingHistory',{emotionObject: emotionObject})
     }
 
     return (

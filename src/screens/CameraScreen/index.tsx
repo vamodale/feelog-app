@@ -50,21 +50,6 @@ export function CameraScreen() {
     }
   }
 
-  async function processImage() {
-    //@ts-ignore
-    Navigation.navigate('Loading')
-    setEmotion(await getEmotion(capturedPhoto.base64))
-
-    //@ts-ignore
-    navigation.navigate('FeelingRecord',
-      {
-        capturedPhoto: capturedPhoto,
-      }
-      
-    )
-    console.log(Emotion)
-  }
-
   return (
     <>
       <ButtonBack />
