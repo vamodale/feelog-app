@@ -6,8 +6,6 @@ import { StatusBar } from 'react-native';
 
 import { useAuth, AuthProvider } from './src/hooks/auth2'
 
-// if (process.env.DEBUG) require('dotenv').config();
-
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_300Light,

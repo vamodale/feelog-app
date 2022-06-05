@@ -22,11 +22,8 @@ export function SignIn() {
         try{    
             setIsLoading(true)
             return await signInWithGoogle();
-
         }catch(err) {
             Alert.alert('Nao foi possivel conectar a conta Google')
-        }finally {
-            setIsLoading(false)
         }
     }
 

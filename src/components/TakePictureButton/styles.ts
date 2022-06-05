@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 64,
         left: windowWidth/2-34,
+
     },
     pictureButton: {
         marginVertical: 2,
@@ -26,5 +27,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: theme.colors.primary,
+        opacity: 10
     }
 });

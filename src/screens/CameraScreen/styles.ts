@@ -1,11 +1,22 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { theme } from '../../global/styles/theme';
+
+const windowWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
 
+    container:{
+        flex: 1, 
+        backgroundColor: theme.colors.primary, 
+        justifyContent: 'center', 
+        alignItems: 'center',
+    },
+
     camera: {
-        position: 'relative',
-        flex: 1
+        display: 'flex',
+        width: windowWidth-64,
+        height: windowWidth-64,
+        borderRadius: (windowWidth-64)/2,
     },
 
     ButtonBack: {

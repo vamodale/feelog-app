@@ -8,14 +8,14 @@ import { TakePictureButton } from '../../components/TakePictureButton';
 import Mask from '../../assets/Mask.png'
 import Exclude from '../../assets/exclude.png'
 import { TouchableOpacity } from 'react-native';
-import getEmotion from '../../connectors/aws/rekognition'
+import * as FaceDetector from 'expo-face-detector';
 import { useNavigation } from '@react-navigation/native';
 
 export function CameraScreen() {
   const camRef = useRef(null);
   const [hasPermission, setHasPermission] = useState(null);
   const [capturedPhoto, setCapturedPhoto] = useState(null);
-  const [Emotion, setEmotion] = useState(null);
+  const [face, setFace] = useState(false);
 
   const [open, setOpen] = useState(null);
   const Navigation = useNavigation();
@@ -50,12 +50,33 @@ export function CameraScreen() {
     }
   }
 
+  const handleFacesDetected = ({ faces }) => {
+    if (faces[0] != undefined){
+      setFace(true)
+    }
+    else 
+      setFace(false)
+  };
+
   return (
-    <>
+    <View style={styles.container}>
       <ButtonBack />
-      <Camera ratio='16:9' autoFocus="auto" style={styles.camera} type={Camera.Constants.Type.front} ref={camRef} />
-      <TakePictureButton onPress={takePicture} />
-      <Image source={Mask} style={{ width: '100%', height: '100%', position: 'absolute' }} />
+      <Camera 
+        ratio='1:1' 
+        autoFocus="auto" 
+        style={styles.camera} 
+        type={Camera.Constants.Type.front} 
+        ref={camRef} 
+        onFacesDetected={handleFacesDetected}
+        faceDetectorSettings={{
+          mode: FaceDetector.FaceDetectorMode.fast,
+          detectLandmarks: FaceDetector.FaceDetectorLandmarks.none,
+          runClassifications: FaceDetector.FaceDetectorClassifications.none,
+          minDetectionInterval: 100,
+        }}
+      />
+      <TakePictureButton onPress={takePicture} disabled={face ? false : true } style={face ? {opacity: 1}: {opacity: 0.2}}/>
+      <Image source={Exclude} style={{ width: '100%', height: '100%', position: 'absolute' }} />
 
       {capturedPhoto &&
         <Modal
@@ -65,7 +86,7 @@ export function CameraScreen() {
           <View style={styles.ModalView}>
             <Image source={Exclude} style={{ width: '100%', height: '100%', position: 'absolute' }} />
             <Image
-              style={{ width: '100%', height: '100%', zIndex: -1, transform: [{ rotateY: '180deg' }] }}
+              style={[styles.camera, {zIndex: -1, transform: [{ rotateY: '180deg' }] }]}
               source={{ uri: capturedPhoto.uri }}
             />
             {/* @ts-ignore */}
@@ -84,6 +105,6 @@ export function CameraScreen() {
 
       }
 
-    </>
+    </View>
   );
 }
