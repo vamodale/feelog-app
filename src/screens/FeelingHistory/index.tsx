@@ -17,7 +17,7 @@ import { theme } from "../../global/styles/theme";
 
 export function FeelingHistory({route}) {
 	const feelings = ["Feliz", "Surpreso", "Medo", "Triste", "Calmo", "Nojo", "Confuso", "Raiva"]
-
+	
 	const { emotionObject } = route.params;
 	return (
 		<View style={styles.container}>
@@ -26,7 +26,7 @@ export function FeelingHistory({route}) {
 			<View style={styles.profile}>
 				<View style={styles.persona}>
 					<View style={{ width: '100%', height: '100%', borderRadius: 84, backgroundColor: theme.colors[emotionObject.Emotion] }}>
-						<Image source={{uri: emotionObject.Picture}} style={styles.picture} />
+						<Image source={{uri: `${process.env.AWS_BUCKET_BASE_URL}/${emotionObject.DailyEmotionId}.jpg`}} style={styles.picture} />
 					</View>
 				</View>
 
