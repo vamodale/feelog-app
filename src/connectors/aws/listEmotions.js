@@ -1,20 +1,23 @@
 const axios = require('axios');
-require('dotenv').config()
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-module.exports = async (user) => {
+export default async () => {
+    const token = await AsyncStorage.getItem("@feelog:token");
+
+    if (!token) return    
+
     return await axios.get(
         process.env.API_ROUTE + '/emotions',
         {
         headers: {
-            'Authorization': user.authToken
+            'Authorization': token
         }
         })
         .then(res => {
-            return res.data;
+            return res.data.data;
         })
         .catch(error => {
-            console.error(error);
-            throw Error(error)
+            console.log(error.response);
         });
 }

@@ -36,8 +36,8 @@ export function FeelingRecord({route}) {
 
     const loadData = async () => {
         try {
-        setEmotion(await getEmotion(base64))
-        setIsLoading(false);
+            setEmotion(await getEmotion(base64))
+            setIsLoading(false);
         }
         catch (e) {
             console.log(e);
@@ -45,9 +45,9 @@ export function FeelingRecord({route}) {
     }
 
     const submitEmotion = async () => {
-    const emotionObject = await createEmotion({ authToken: ''/* TOKEN DE AUTORIZACAO */}, 
-        {message, emotion, picture: base64} )
-        
+        setIsLoading(true);
+        const emotionObject = await createEmotion({message, emotion}, base64)
+        setIsLoading(false);
         //@ts-ignore
         Navigation.navigate('FeelingHistory',{emotionObject: emotionObject})
     }

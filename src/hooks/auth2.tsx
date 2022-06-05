@@ -4,7 +4,7 @@ import * as AuthSession from 'expo-auth-session';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const {CLIENT_ID_GOOGLE} = process.env
-const {REDIRECT_URI} = process.env
+const {REDIRECT_URI_GOOGLE} = process.env
 
 interface AuthProviderProps {
 	children: ReactNode;
@@ -39,20 +39,28 @@ function AuthProvider({ children }: AuthProviderProps){
 
 	async function signInWithGoogle() {
 		try {
-			const CLIENT_ID = '9610623123-jv36jsk700mo7j7aie9q2uju8ohum6ap.apps.googleusercontent.com';
-			const REDIRECT_URI = 'https://auth.expo.io/@kastango/feelog';
+			const CLIENT_ID = CLIENT_ID_GOOGLE;
+			const REDIRECT_URI = REDIRECT_URI_GOOGLE;
+			const AUTH_URL = 'https://iuhhf65ebjinf4z63vdw3wudbm0hzpoo.lambda-url.us-east-1.on.aws/'
 			const RESPONSE_TYPE = 'token';
 			const SCOPE = encodeURI('profile email');
-
+			
 			const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
 
 			const {type, params} = await AuthSession
 			.startAsync({ authUrl }) as AuthorizationResponse;
-
 			if (type === 'success') {
-				const response = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${params.access_token}`);
-				const userInfo = await response.json();
+				const response = await fetch(
+					AUTH_URL, 
+					{
+						method: "POST",
+						body: JSON.stringify({
+							token: params.access_token
+						}),
+					}
+				);
 
+				const { userInfo, authToken } = await response.json();
 				const userLogged = {
 					id: userInfo.id,
 					name: userInfo.name,
@@ -61,8 +69,10 @@ function AuthProvider({ children }: AuthProviderProps){
 				}
 
 				setUser(userLogged)
-				await AsyncStorage.setItem("@feelog:user", JSON.stringify(userLogged));
-				
+				await Promise.all([
+					AsyncStorage.setItem("@feelog:user", JSON.stringify(userLogged)), 
+					AsyncStorage.setItem("@feelog:token", authToken)
+				])
 			  }
 		}
 		catch(err){
@@ -73,6 +83,7 @@ function AuthProvider({ children }: AuthProviderProps){
 	async function signOut(){
 		setUser({} as User);
 		await AsyncStorage.removeItem("@feelog:user");
+		await AsyncStorage.removeItem("@feelog:token");
 	  }
 
 	useEffect(() => {
