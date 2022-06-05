@@ -31,7 +31,6 @@ async function getEmotion(image) {
     };
     try {
       const data = await rekognitionClient.send(new DetectFacesCommand(params));
-      console.log(EMOTION_ENUM[data.FaceDetails[0].Emotions[0].Type])
       return EMOTION_ENUM[data.FaceDetails[0].Emotions[0].Type];
     } catch(err) {
       console.log(err)

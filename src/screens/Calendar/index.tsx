@@ -64,17 +64,16 @@ const CalendarsList = () => {
 
 	const onDayPress = day => {
 		const emotion = markedDates[day.dateString]
-
 		//@ts-ignore
 		Navigation.navigate('FeelingHistory',{emotionObject: {
-		//@ts-ignore
-		DailyEmotionId: emotion.id,
-		Created_at: day.dateString,
-		//@ts-ignore
-		Emotion: emotion.emotion,
-		//@ts-ignore
-		Message: emotion.message
-	}})
+			//@ts-ignore
+			DailyEmotionId: emotion.id,
+			Created_at: day.dateString,
+			//@ts-ignore
+			Emotion: emotion.emotion,
+			//@ts-ignore
+			Message: emotion.message
+		}})
 	
     setSelected(day.dateString);
   };

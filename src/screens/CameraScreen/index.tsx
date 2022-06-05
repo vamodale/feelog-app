@@ -44,9 +44,7 @@ export function CameraScreen() {
     if (camRef) {
       const data = await camRef.current.takePictureAsync(options);
       setCapturedPhoto(data);
-      // console.log(data.base64)
       setOpen(true)
-      // console.log(data)
     }
   }
 
