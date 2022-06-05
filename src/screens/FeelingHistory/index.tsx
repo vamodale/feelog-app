@@ -19,6 +19,7 @@ export function FeelingHistory({route}) {
 	const feelings = ["Feliz", "Surpreso", "Medo", "Triste", "Calmo", "Nojo", "Confuso", "Raiva"]
 	
 	const { emotionObject } = route.params;
+	
 	return (
 		<View style={styles.container}>
 			<ButtonBack />

@@ -21,7 +21,7 @@ export function CameraScreen() {
   const Navigation = useNavigation();
 
   const options = {
-    quality: 0.5,
+    quality: 0,
     base64: true
   };
 

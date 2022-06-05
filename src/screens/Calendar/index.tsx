@@ -27,7 +27,7 @@ const CalendarsList = () => {
 			selected: true,
 			disableTouchEvent: true,
 			selectedColor: '#5E60CE',
-			selectedTextColor: 'white'
+			selectedTextColor: theme.colors.primary
 		}
 	};
 	const [markedDates, setMarkedDates] = useState(markedDatesDefault);
@@ -50,7 +50,8 @@ const CalendarsList = () => {
 						//@ts-ignore
 						message: emotion.Message,
 						id: id,
-						emotion: emotion.Emotion
+						emotion: emotion.Emotion,
+						selectedTextColor: theme.colors.primary
 					}
 				})
 				setMarkedDates(newMarkedDates)
@@ -63,6 +64,9 @@ const CalendarsList = () => {
 	}
 
 	const onDayPress = day => {
+		if (markedDates[day.dateString] == undefined) 
+			return
+
 		const emotion = markedDates[day.dateString]
 		//@ts-ignore
 		Navigation.navigate('FeelingHistory',{emotionObject: {
