@@ -39,13 +39,11 @@ function AuthProvider({ children }: AuthProviderProps){
 
 	async function signInWithGoogle() {
 		try {
-			const CLIENT_ID = CLIENT_ID_GOOGLE;
-			const REDIRECT_URI = REDIRECT_URI_GOOGLE;
 			const AUTH_URL = 'https://iuhhf65ebjinf4z63vdw3wudbm0hzpoo.lambda-url.us-east-1.on.aws/'
 			const RESPONSE_TYPE = 'token';
 			const SCOPE = encodeURI('profile email');
 			
-			const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
+			const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID_GOOGLE}&redirect_uri=${REDIRECT_URI_GOOGLE}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
 
 			const {type, params} = await AuthSession
 			.startAsync({ authUrl }) as AuthorizationResponse;
