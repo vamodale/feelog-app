@@ -1,0 +1,22 @@
+{
+  "build": {
+    "production": {
+      "env": {
+        "AWS_ACCESS_KEY_ID": "AKIARC2ROSLCBJ67KZ4J",
+        "AWS_SECRET_ACCESS_KEY": "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",
+        "AWS_REGION": "us-east-1",
+        "AWS_BUCKET_BASE_URL": "https://feelog.s3.us-east-1.amazonaws.com",
+        "API_ROUTE": "https://xpdr0x7uyc.execute-api.us-east-1.amazonaws.com/prod",
+        "USER_POOL_ID": "us-east-1_yvFcBB6Pl",
+        "CLIENT_ID": "2fn63jg4ojlafjai6cn11j9tiu",
+        "CLIENT_ID_GOOGLE": "9610623123-jv36jsk700mo7j7aie9q2uju8ohum6ap.apps.googleusercontent.com",
+        "REDIRECT_URI_GOOGLE": "https://auth.expo.io/@kastango/feelog",
+        "RESPONSE_TYPE": "token"
+      }
+    }
+  },
+  "cli": {
+    "version": ">= 0.53.0",
+    "requireCommit": true
+  }
+}

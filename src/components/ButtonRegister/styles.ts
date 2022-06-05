@@ -9,17 +9,17 @@ export const styles = StyleSheet.create({
         borderRadius: 24,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center',
         marginTop: 96,
     },
     title: {
-        flex: 1,
         color: theme.colors.primary,
         fontSize: 16,
         fontFamily: theme.fonts.title500,
-        textAlign: 'center',
-        marginRight: 30,
+        textAlign: 'left'
     },
     icongoogle: {
-        marginLeft: 40
+        marginRight: 16,
+        alignItems: 'center',
     }
 });

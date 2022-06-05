@@ -4,11 +4,11 @@ import {RekognitionClient, DetectFacesCommand} from '@aws-sdk/client-rekognition
 var toUint8Array = require('base64-to-uint8array')
 
 const rekognitionClient = new RekognitionClient({
-  region: process.env.AWS_REGION,
   credentials: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   },
+  region: process.env.AWS_REGION,
 });
 
 const EMOTION_ENUM = {
@@ -29,10 +29,12 @@ async function getEmotion(image) {
       },
       Attributes: ["ALL"],
     };
-
-    const data = await rekognitionClient.send(new DetectFacesCommand(params));
-    console.log(EMOTION_ENUM[data.FaceDetails[0].Emotions[0].Type])
-    return EMOTION_ENUM[data.FaceDetails[0].Emotions[0].Type];
+    try {
+      const data = await rekognitionClient.send(new DetectFacesCommand(params));
+      return EMOTION_ENUM[data.FaceDetails[0].Emotions[0].Type];
+    } catch(err) {
+      console.log(err)
+    }
 
 };
 

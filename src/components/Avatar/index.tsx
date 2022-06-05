@@ -13,7 +13,7 @@ export function Avatar({ urlImage, colorEnum}: Props) {
     return (
         <LinearGradient
             style={styles.container}
-            colors={[theme.colors[colorEnum]]}
+            colors={[theme.colors[colorEnum], theme.colors[colorEnum]]}
         >
             <Image
                 source={{ uri: urlImage }}

@@ -4,7 +4,26 @@ import { Poppins_300Light, Poppins_500Medium, Poppins_400Regular, Poppins_600Sem
 import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'react-native';
 
-// if (process.env.DEBUG) require('dotenv').config();
+import { useAuth, AuthProvider } from './src/hooks/auth2'
+
+import { LogBox } from "react-native";
+
+const ignoreWarns = [
+    "ViewPropTypes will be removed",
+    "expo-app-loading is deprecated in favor of expo-splash-screen",
+    "ViewPropTypes will be removed from React Native. Migrate to ViewPropTypes exported from 'deprecated-react-native-prop-types'."
+];
+const warn = console.warn;
+
+
+console.warn = (...arg) => {
+    for (let i = 0; i < ignoreWarns.length; i++) {
+        if (arg[0].startsWith(ignoreWarns[i]))  return;
+    }
+    warn(...arg);
+};
+
+LogBox.ignoreLogs(ignoreWarns);
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -14,7 +33,9 @@ export default function App() {
     Poppins_600SemiBold
   });
 
-  if (!fontsLoaded) {
+  const { userStorageLoading } = useAuth()
+
+  if (!fontsLoaded || userStorageLoading) {
     return <AppLoading />;
   }
 
@@ -26,7 +47,9 @@ export default function App() {
         translucent
       />
 
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </>
   );
 }

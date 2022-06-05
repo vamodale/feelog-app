@@ -5,21 +5,15 @@ import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
 
 type Props = {
-    description: string
+    description: string,
+    onPress: any
 }
 
-export function ButtonGeneric({ description }: Props) {
-    const Navigation = useNavigation();
-
-    function HandleProfile() {
-        //@ts-ignore
-        Navigation.navigate('Profile')
-    }
-
+export function ButtonGeneric({ description, onPress }: Props) {
     return (
         <TouchableOpacity
             style={styles.container}
-            onPress={HandleProfile}
+            onPress={onPress}
         >
 
             <Text style={styles.title}>
