@@ -18,7 +18,7 @@ Feelog busca utilizar um modelo de Machine Learning com Análise Facial para cri
 $ git clone https://github.com/vamodale/feelog-app.git
 #
 # access the folder feelog-app
-$ cd rs-dtmoney
+$ cd feelog-app
 #
 # Install dependecies
 $ yarn install
