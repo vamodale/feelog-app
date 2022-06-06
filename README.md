@@ -26,5 +26,5 @@ $ yarn install
 # Execute the project
 $ expo start
 #
-# Access http://localhost:3000 in your browser
+# 
 ```
