@@ -78,7 +78,7 @@ export function FeelingRecord({route}) {
                 onBlur={() => setIcon(false)}
                 rowTextStyle={styles.selectTextRow}
                 rowStyle={{borderBottomWidth: 0}}
-                dropdownStyle={{...styles.selectDropDown, ...{borderColor: theme.colors[emotion]}}}
+                dropdownStyle={styles.selectDropDown}
                 onSelect={(selectedItem, index) => {
                     setEmotion(index+1)
                 }}

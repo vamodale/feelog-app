@@ -13,7 +13,6 @@ web-build/
 config.json
 userEx.js
 static/imgs/*
-eas.json
 
 # macOS
 .DS_Store

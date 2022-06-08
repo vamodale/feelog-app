@@ -61,7 +61,6 @@ export const styles = StyleSheet.create({
 		fontSize: 14, // FontSize Responsive
 		fontFamily: theme.fonts.title400,
 		color: theme.colors.white,
-		marginRight: 20,
 	},
 
 	pressable: {
@@ -71,6 +70,7 @@ export const styles = StyleSheet.create({
 		borderColor: theme.colors.white,
 		borderWidth: 1,
 		padding: 12,
+		paddingHorizontal: 24,
 		alignItems: 'center',
 		flex: 1
 	}

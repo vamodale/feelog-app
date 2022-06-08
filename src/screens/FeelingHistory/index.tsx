@@ -33,7 +33,7 @@ export function FeelingHistory({route}) {
 
 				<View style={styles.data}>
 					<Text style={styles.year}>
-						{moment(emotionObject.Created_at).format('ddd').charAt(0).toUpperCase() + moment(emotionObject.Created_at).format('ddd').slice(1)}
+						{moment(emotionObject.Created_at).format('dddd').charAt(0).toUpperCase() + moment(emotionObject.Created_at).format('dddd').slice(1)?.split('-')[0]}
 					</Text>
 
 					<Text style={styles.date}>

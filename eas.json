@@ -1,20 +1,5 @@
 {
   "build": {
-    "preview": {
-      "developmentClient": true,
-      "android": {
-        "buildType": "apk",
-        "gradleCommand": ":app:assembleRelease"
-      }
-    },
-    "preview2": {
-      "android": {
-        "gradleCommand": ":app:assembleRelease"
-      }
-    },
-    "preview3": {
-      "developmentClient": true
-    },
     "production": {
       "env": {
         "AWS_ACCESS_KEY_ID": "AKIARC2ROSLCBJ67KZ4J",
