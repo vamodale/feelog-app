@@ -18,8 +18,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "feelog.app"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {

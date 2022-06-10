@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         top: 64,
         left: 32,
         borderColor: '#FFFFFF',
-        borderWidth: 1,
+        borderWidth: 2,
         backgroundColor: theme.colors.primary,
         zIndex: 2,
         elevation: 2,
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     },
 
     Icon: {
-        marginTop: 11,
-        marginLeft: 11,
+        marginTop: 10,
+        marginLeft: 10,
     }
 })

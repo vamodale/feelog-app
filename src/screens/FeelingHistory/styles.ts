@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
 	emotion: {
 		flex: 1,
 		marginTop: 8,
-		borderRadius: 24,
+		borderRadius: 26,
 		borderWidth: 2,
 		width: '100%',
 		height: 48,
