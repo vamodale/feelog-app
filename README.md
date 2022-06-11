@@ -46,7 +46,7 @@ $ expo start
 #
 ```
 
-## Contributors
+## 👥 Contributors
 <div align="center">
   <a href = "https://github.com/vamodale/feelog-app/graphs/contributors">
     <img src = "https://contrib.rocks/image?repo=vamodale/feelog-app"/>
