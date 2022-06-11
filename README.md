@@ -36,6 +36,8 @@ $ git clone https://github.com/vamodale/feelog-app.git
 # access the folder feelog-app
 $ cd feelog-app
 #
+# fill in the .env as shown in the .env_example file
+#
 # Install dependecies
 $ yarn install
 #
