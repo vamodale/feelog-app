@@ -3,7 +3,7 @@
 </div>
   
 ## 📙 About
-Feelog busca utilizar um modelo de Machine Learning com Análise Facial para criar um histórico de emoções. Nele, o usuário diariamente poderá documentar suas emoções, tirando uma selfie e escrevendo um breve texto de como está se sentindo. A partir disso, poderão ser criadas diferentes visualizações com o dia a dia do usuário. Agindo como um diário de sentimentos, Feelog faz com que você nunca esqueça como já se sentiu.
+Feelog uses a Machine Learning model with Facial Analysis to create a history of emotions. The user will be able to document their emotions daily, taking a selfie and writing a short text about how they feel. After that, through a calendar, different insights can be made by recording the user's daily life. Acting as a feeling journal, Felog makes sure you never forget how you once felt.
 
 ## 🧰 Tech & Libraries
 * [React Native](https://reactnative.dev/)
