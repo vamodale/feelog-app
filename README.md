@@ -3,7 +3,7 @@
 </div>
   
 ## 📙 About
-Feelog uses a Machine Learning model with Facial Analysis to create a history of emotions. The user will be able to document their emotions daily, taking a selfie and writing a short text about how they feel. After that, through a calendar, different insights can be made by recording the user's daily life. Acting as a feeling journal, Felog makes sure you never forget how you once felt.
+Feelog uses a Machine Learning model with Facial Analysis to create a history of emotions. The user will be able to document their emotions daily, taking a selfie and writing a short text about how they feel. After that, through a calendar, different insights can be made by recording the user's daily life. Acting as a feeling journal, Feelog makes sure you never forget how you once felt.
 
 ## [▶️ Video](https://youtu.be/LFzbZXUbYrQ)
 [![Watch the video](https://i.ibb.co/zH44vbQ/Feelog-showing-the-app.gif)](https://youtu.be/LFzbZXUbYrQ) 
