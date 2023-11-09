@@ -3,7 +3,7 @@
 </div>
   
 ## 📙 About
-Feelog uses a Face Detection and Machine Learning model with Facial Analysis to create a diary with a picture and user's emotions.
+Feelog uses a Face Detection and a Machine Learning model with Facial Analysis to create a diary with a picture and user's emotions.
 
 The user will be able to document their emotions daily, taking a selfie and writing a short text about how they feel. After that, through a calendar, different insights can be made by recording the user's daily life. Acting as a feeling journal, Feelog makes sure you never forget how you once felt.
 
